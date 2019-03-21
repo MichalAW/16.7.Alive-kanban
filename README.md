@@ -1,1 +1,1 @@
-# -query-to-server
+# query-to-server
