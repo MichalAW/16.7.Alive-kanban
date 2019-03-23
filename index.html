@@ -8,19 +8,14 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	</head>
 	<body>
-	  	<main>
-		    <header>
-		        <h1>Random quote machine</h1>
-		    </header>
-		    <div class="box">
-		        <h2 class="quote"></h2>
-		        <h3 class="author"></h3>
-		    </div>
-		    <div>
-		        <button class="trigger"> Random quote </button>
-		        <a href="#" target="_blank" class="tweet"><i class="fa fa-lg fa-twitter"></i> Tweet</a>
-		    </div>
-		</main>
+	  	<h1>Country search</h1>
+		<button id="search">Search country</button>
+		<input id="country-name" type="text">
+		<h2>List of countries</h2>
+		
+		<ul id="countries">
+			<li>No data</li>
+		</ul>
 	  	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     	<script src="js/index.js"></script>
 	</body>

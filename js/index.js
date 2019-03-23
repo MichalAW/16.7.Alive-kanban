@@ -1,44 +1,25 @@
-var tweetLink = "https://twitter.com/intent/tweet?text=";
-var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-var prefix = "https://cors-anywhere.herokuapp.com/";
+var url = 'https://restcountries.eu/rest/v1/name/';
+var countriesList = document.getElementById('countries');
 
-function getQuote() {
-	fetch(prefix + quoteUrl, { cache: "no-store" })
-	fetch(quoteUrl, { cache: "no-store"})
-		.then(function(resp) {
-			return resp.json();
-		})
+function searchCountries() {
+    var countryName = document.getElementById('country-name').value;
 
-		.then(createTweet);
+    if (!countryName.length) countryName = 'Poland';
+
+    fetch(url + countryName)
+        .then(function(resp) {
+            return resp.json();
+        })
+        .then(showCountriesList);
 }
 
-function createTweet(input) {
-    var data = input[0];
-
-    var dataElement = document.createElement('div');
-    dataElement.innerHTML = data.content;
-    var quoteText = dataElement.innerText.trim();
-    var quoteAuthor = data.title;
-    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
-
-    if (tweetText.length > 140) {
-    getQuote();
-	} else {
-	    var tweet = tweetLink + encodeURIComponent(tweetText);
-	    document.querySelector('.quote').innerText = quoteText;
-	    document.querySelector('.author').innerText = "Author: " + quoteAuthor;
-	    document.querySelector('.tweet').setAttribute('href', tweet);
-	}
-
-    if (!quoteAuthor.length) {
-        quoteAuthor = "Unknown author";
-    
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    getQuote();
-    document.querySelector('.trigger').addEventListener('click', function() {
-        getQuote();
+function showCountriesList(resp) {
+    countriesList.innerHTML = '';
+    resp.forEach(function(item) {
+        var li = document.createElement('li');
+        li.innerText = item.name;
+        countriesList.appendChild(li);
     });
-});
+}
+
+document.getElementById('search').addEventListener('click', searchCountries);
