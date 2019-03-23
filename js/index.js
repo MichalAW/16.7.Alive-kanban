@@ -1,4 +1,4 @@
-var url = 'https://restcountries.eu/rest/v1/name/';
+var url = 'http://restcountries.eu/rest/v1/name/';
 var countriesList = document.getElementById('countries');
 
 function searchCountries() {
