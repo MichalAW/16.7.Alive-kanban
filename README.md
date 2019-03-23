@@ -1,3 +1,3 @@
 # query-to-server
-repository -->
+repository --> https://github.com/MichalAW/query-to-server.git
 Site --> https://michalaw.github.io/query-to-server/
