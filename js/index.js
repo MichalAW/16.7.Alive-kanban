@@ -103,25 +103,25 @@ document.addEventListener('DOMContentLoaded', function() {
 	todoColumn.addCard(card1);
 	doingColumn.addCard(card2);
 
-	// // API
-	// var apiUrl = 'https://kodilla.com/pl/bootcamp-api';
-	// var myHeaders = {
-	// 	'X-Client-Id': 3766,
-	// 	'X-Auth-Token': '4343329422ea3fb07a9ba7238f375c4f'
-	// }
+	// API
+	var apiUrl = 'https://kodilla.com/pl/bootcamp-api';
+	var myHeaders = {
+		'X-Client-Id': 3766,
+		'X-Auth-Token': '4343329422ea3fb07a9ba7238f375c4f'
+	};
 
-	// fetch(apiUrl + '/board', { headers: myHeaders })
-	// 	.then(function(resp) {
-	// 		return resp.json();
-	// 	})
-	// 	.then(function(resp) {
-	// 		setupColumns(resp.columns)
-	// 	})
+	fetch(apiUrl + '/board', { headers: myHeaders, mode: 'no-cors' })
+		.then(function(resp) {
+			return resp.json();
+		})
+		.then(function(resp) {
+			setupColumns(resp.columns)
+		})
 
-	// function setupColumns(columns) {
-	// 	columns.forEach(function(column) {
-	// 		var col = new Column(column.id, column.name);
-	// 		board.addColumn(col);
-	// 	});
-	// }
+	function setupColumns(columns) {
+		columns.forEach(function(column) {
+			var col = new Column(column.id, column.name);
+			board.addColumn(col);
+		});
+	}
 })
