@@ -16,7 +16,8 @@ function Card(id, name) {
   	});
 }
 
-removeCard: function() {
+Card.prototype = {
+  removeCard: function() {
   var self = this;
 
   fetch(baseUrl + '/card/' + self.id, { method: 'DELETE', headers: myHeaders })
@@ -26,4 +27,5 @@ removeCard: function() {
     .then(function(resp) {
       self.element.parentNode.removeChild(self.element);
     })
-}
+  }
+};
