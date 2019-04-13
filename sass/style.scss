@@ -1,0 +1,46 @@
+$body-background: #2A2A30;
+$body-color: #EDEDEF;
+$card-color: #696969;
+$column-color: #A9A9A9;
+
+* {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+   color: $body-color;
+   background: $body-background;
+   text-align: center;
+}
+
+.card {
+  background: rgba(0, 0, 0, .4);
+  background-color: $card-color;
+  padding: 5px;
+}
+
+.column-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: $column-color;
+  word-break: break-word;
+}
+
+.column-card-list {
+  list-style: none;
+  min-width: 15rem;
+  min-height: 10rem;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  background-color: $column-color;
+  li {
+    padding: 5px 10px;  
+  }
+}
+
+.card-description {
+  display: inline-block;
+  word-break: break-word;
+}
