@@ -1,10 +1,11 @@
+var prefix = 'https://cors-anywhere.herokuapp.com/';
 var board = {
-    name: 'Tablica Kanban',
-    addColumn: function(column) {
-      this.element.appendChild(column.element);
-      initSortable(column.id); //About this feature we will tell later
-    },
-    element: document.querySelector('#board .column-container')
+  name: 'Tablica Kanban',
+  addColumn: function(column) {
+    this.element.appendChild(column.element);
+    initSortable(column.id);
+  },
+  element: document.querySelector('#board .column-container')
 };
 
 document.querySelector('#board .create-column').addEventListener('click', function() {
@@ -13,7 +14,7 @@ document.querySelector('#board .create-column').addEventListener('click', functi
 
   data.append('name', name);
 
-  fetch(baseUrl + '/column', {
+  fetch(prefix + baseUrl + '/column', {
     method: 'POST',
     headers: myHeaders,
     body: data,
@@ -29,9 +30,9 @@ document.querySelector('#board .create-column').addEventListener('click', functi
 
 	
 function initSortable(id) {
-  	var el = document.getElementById(id);
-  	var sortable = Sortable.create(el, {
-    	group: 'kanban',
-    	sort: true
-  	});
+	var el = document.getElementById(id);
+	var sortable = Sortable.create(el, {
+  	group: 'kanban',
+  	sort: true
+  });
 } 
