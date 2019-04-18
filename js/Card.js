@@ -2,30 +2,30 @@
 var prefix = 'https://cors-anywhere.herokuapp.com/';
 
 function Card(id, name) {
-  var self = this;
+    var self = this;
 
 	this.id = id;
-  this.name = name || 'No name given';
+    this.name = name || 'No name given';
 	this.element = generateTemplate('card-template', { description: this.name }, 'li');
 	this.element.querySelector('.card').addEventListener('click', function (event) {
-  	event.stopPropagation();
+        event.stopPropagation();
 
-  	if (event.target.classList.contains('btn-delete')) {
-    	self.removeCard();
-  	}
+        if (event.target.classList.contains('btn-delete')) {
+            self.removeCard();
+        };
 	});
-}
+};
 
 Card.prototype = {
-  removeCard: function() {
-  var self = this;
+    removeCard: function() {
+        var self = this;
 
-  fetch(prefix + baseUrl + '/card/' + self.id, { method: 'DELETE', headers: myHeaders })
-    .then(function(resp) {
-      return resp.json();
-    })
-    .then(function(resp) {
-      self.element.parentNode.removeChild(self.element);
-    })
-  }
+        fetch(prefix + baseUrl + '/card/' + self.id, { method: 'DELETE', headers: myHeaders })
+        .then(function(resp) {
+            return resp.json();
+        })
+        .then(function(resp) {
+            self.element.parentNode.removeChild(self.element);
+        });
+    }
 };

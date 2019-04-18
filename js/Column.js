@@ -44,9 +44,9 @@ function Column(name) {
 				});
 	    	});
 		self.addCard(new Card(cardName));
-		}
+		};
 	});
-}
+};
 
 Column.prototype = {
 	addCard: function(card) {
