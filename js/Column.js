@@ -25,8 +25,8 @@ function Column(id, name) {
         if (event.target.classList.contains('add-card')) {
             var cardName = prompt("Enter the name of the card");
             event.preventDefault();
-
             var data = new FormData();
+            
             data.append('name', cardName);
             data.append('bootcamp_kanban_column_id', self.id);
 
@@ -53,7 +53,8 @@ Column.prototype = {
     },
     removeColumn: function () {
         var self = this;
-        fetch(baseUrl + '/column/' + self.id, {
+        
+        fetch(prefix + baseUrl + '/column/' + self.id, {
                 method: 'DELETE',
                 headers: myHeaders
             })
