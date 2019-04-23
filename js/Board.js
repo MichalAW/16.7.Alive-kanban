@@ -1,12 +1,3 @@
-// API
-
-var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
-var prefix = "https://cors-anywhere.herokuapp.com/";
-var myHeaders = {
-    'X-Client-Id': '3766',
-    'X-Auth-Token': '4343329422ea3fb07a9ba7238f375c4f'
-};
-
 var board = {
     name: 'Kanban Board',
     addColumn: function (column) {
