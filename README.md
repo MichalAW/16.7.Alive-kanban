@@ -9,4 +9,5 @@ Site --> https://michalaw.github.io/Alive-kanban/
 3. Delete and Add any board you want.
 4. Click green "Add column" to receive Column note.
 5. Click red "Add" to add notes. 
-6. If you want to save notes, download repository and run script 'watch'.
+6. If you want to save your own notes, download repository and run script 'watch'.
+7. NOTE - On site https://michalaw.github.io/Alive-kanban/ , any progres will be saved.
