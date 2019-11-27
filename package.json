@@ -1,5 +1,5 @@
 {
-  "name": "query-to-server",
+  "name": "Alive-kanban",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MichalAW/query-to-server.git"
+    "url": "https://github.com/MichalAW/Alive-kanban.git"
   },
   "keywords": [],
   "author": "MichalAW michal.wanta@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MichalAW/query-to-server/issues"
+    "url": "https://github.com/MichalAW/Alive-kanban/issues"
   },
-  "homepage": "https://github.com/MichalAW/query-to-server#readme",
+  "homepage": "https://github.com/MichalAW/Alive-kanbanr#readme",
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.26.3",
